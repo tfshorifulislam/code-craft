@@ -69,7 +69,7 @@ export const cloudApi = {
   auth: {
     async getMe(): Promise<CloudUser | null> {
       try {
-        const res = await fetch("/api/auth/me", { cache: "no-store" });
+        const res = await fetch("/api/auth/me", { cache: "no-store", credentials: "include" });
         if (!res.ok) return null;
         const data = await res.json();
         return data.user || null;
@@ -82,6 +82,7 @@ export const cloudApi = {
       const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({ email, password, name }),
       });
       const data = await res.json();
@@ -96,6 +97,7 @@ export const cloudApi = {
       const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
@@ -108,7 +110,7 @@ export const cloudApi = {
 
     async logout(): Promise<void> {
       try {
-        await fetch("/api/auth/logout", { method: "POST" });
+        await fetch("/api/auth/logout", { method: "POST", credentials: "include" });
       } finally {
         clearUserCaches();
       }
