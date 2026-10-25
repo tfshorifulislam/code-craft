@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, type MouseEvent } from "react";
+import { useState, type MouseEvent } from "react";
 import {
   FileCode,
   Play,

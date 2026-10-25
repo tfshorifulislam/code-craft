@@ -311,14 +311,6 @@ body {
   border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
 }
 
-.landing-hero-title {
-  font-size: var(--font-size-hero);
-  line-height: var(--line-height-tight);
-  font-weight: var(--font-weight-extrabold);
-  letter-spacing: -0.03em;
-  color: var(--color-foreground);
-}
-
 .landing-section-title {
   font-size: var(--font-size-section-title);
   line-height: var(--line-height-heading);
